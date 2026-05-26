@@ -1,36 +1,52 @@
-function Process() {
+import { motion } from 'framer-motion';
+import { fadeUpItem, sectionMotionProps, staggerContainer } from '../lib/motion';
+
+export default function Process() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32">
-      <div className="max-w-4xl mx-auto pl-4 lg:pl-12">
+    <motion.section {...sectionMotionProps} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32">
+      <motion.div variants={staggerContainer} className="max-w-4xl mx-auto pl-4 lg:pl-12">
         <h4 className="text-gray-500 mb-16 text-[1.1rem]">Our Work Process</h4>
         
         <div className="flex flex-col gap-16">
-          <div className="flex items-start gap-8 md:gap-12">
+          <motion.div
+            variants={fadeUpItem}
+            whileHover={{ x: 8 }}
+            transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+            className="flex items-start gap-8 md:gap-12"
+          >
             <span className="text-8xl md:text-[8rem] font-light text-black leading-[0.75] shrink-0 w-16 md:w-24">1</span>
             <p className="text-[1.75rem] md:text-[2.25rem] leading-[1.2] text-[#1A1A1A] tracking-tight">
               You reach out - We respond within 24<br className="hidden md:block"/> hours and schedule a free visit.
             </p>
-          </div>
+          </motion.div>
           
           {/* Step 2 */}
-          <div className="flex items-start gap-8 md:gap-12">
+          <motion.div
+            variants={fadeUpItem}
+            whileHover={{ x: 8 }}
+            transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+            className="flex items-start gap-8 md:gap-12"
+          >
             <span className="text-8xl md:text-[8rem] font-light text-black leading-[0.75] shrink-0 w-16 md:w-24">2</span>
             <p className="text-[1.75rem] md:text-[2.25rem] leading-[1.2] text-[#1A1A1A] tracking-tight">
               We assess and quote - No hidden<br className="hidden md:block"/> fees, no surprises. Just a clear price.
             </p>
-          </div>
+          </motion.div>
           
           {/* Step 3 */}
-          <div className="flex items-start gap-8 md:gap-12">
+          <motion.div
+            variants={fadeUpItem}
+            whileHover={{ x: 8 }}
+            transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+            className="flex items-start gap-8 md:gap-12"
+          >
             <span className="text-8xl md:text-[8rem] font-light text-[#FF4D11] leading-[0.75] shrink-0 w-16 md:w-24">3</span>
             <p className="text-[1.75rem] md:text-[2.25rem] leading-[1.2] text-gray-500 italic tracking-tight">
               We show up and deliver - On<br className="hidden md:block"/> time, clean, exactly as agreed.
             </p>
-          </div>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
-
-export default Process;

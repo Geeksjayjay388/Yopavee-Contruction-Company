@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Play, Star, ArrowLeft, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import reviewVideo from '../assets/video.png';
+import { sectionMotionProps } from '../lib/motion';
 
 const reviewsData = [
   {
@@ -90,7 +92,7 @@ function Reviews() {
   const getNextIndex = () => (currentIndex + 1) % reviewsData.length;
 
   return (
-    <section className="py-16 lg:py-24 bg-white overflow-hidden" id="reviews">
+    <motion.section {...sectionMotionProps} className="py-16 lg:py-24 bg-white overflow-hidden" id="reviews">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-medium text-black mb-4 tracking-tight">See what our clients say about us</h2>
         <p className="text-gray-400 max-w-sm mx-auto text-[15px] leading-snug">
@@ -149,7 +151,7 @@ function Reviews() {
             <ArrowRight className="w-5 h-5 text-gray-600" strokeWidth={1.5} />
         </button>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

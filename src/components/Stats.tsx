@@ -1,23 +1,25 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import stats from "../assets/statsimages.png";
 import beforeImg from "../assets/before.png";
 import afterImg from "../assets/after.png";
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { fadeUpItem, sectionMotionProps, staggerContainer } from '../lib/motion';
 
 function Stats() {
     const [sliderPosition, setSliderPosition] = useState(50);
 
     return (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <motion.section {...sectionMotionProps} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+            <motion.div variants={staggerContainer} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                 
                 {/* Left Side: Images */}
-                <div className="w-full lg:col-span-5 lg:pr-6">
+                <motion.div variants={fadeUpItem} className="w-full lg:col-span-5 lg:pr-6">
                     <img src={stats} alt="Team at work" className="w-[85%] mx-auto lg:w-full h-auto object-contain rounded-lg" />
-                </div>
+                </motion.div>
                 
                 {/* Right Side: Quote and Author */}
-                <div className="flex flex-col gap-8 lg:col-span-7">
+                <motion.div variants={fadeUpItem} className="flex flex-col gap-8 lg:col-span-7">
                     <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] leading-none font-medium text-[#1A1A1A] tracking-tight">
                         I built my team around one rule - don't leave until the client is happy. Every person on my crew takes your project personally, not just professionally.
                     </h2>
@@ -38,46 +40,46 @@ function Stats() {
                             <span className="text-gray-500 text-lg">- CEO of Yopavve</span>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
-            </div>
+            </motion.div>
 
             {/* Stats Cards Section */}
-            <div className="mt-24 lg:mt-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div variants={staggerContainer} className="mt-24 lg:mt-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Top Row Cards */}
-                <div className="border border-gray-200 rounded-xl p-8 flex flex-col justify-between gap-12 bg-white">
+                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex flex-col justify-between gap-12 bg-white">
                     <h3 className="text-[2.5rem] font-medium text-black leading-none">8+ years</h3>
                     <p className="text-gray-500 text-[15px] leading-snug max-w-[220px]">
                         We have been working with paving stones since 2017
                     </p>
-                </div>
-                <div className="border border-gray-200 rounded-xl p-8 flex flex-col justify-between gap-12 bg-white">
+                </motion.div>
+                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex flex-col justify-between gap-12 bg-white">
                     <h3 className="text-[2.5rem] font-medium text-black leading-none">500+</h3>
                     <p className="text-gray-500 text-[15px] leading-snug max-w-[220px]">
                         Projects delivered on time and on budget.
                     </p>
-                </div>
-                <div className="border border-gray-200 rounded-xl p-8 flex flex-col justify-between gap-12 bg-white">
+                </motion.div>
+                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex flex-col justify-between gap-12 bg-white">
                     <h3 className="text-[2.5rem] font-medium text-black leading-none">98%</h3>
                     <p className="text-gray-500 text-[15px] leading-snug max-w-[220px]">
                         98% clients would hire us again — and most already have.
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Bottom Row Cards */}
-                <div className="border border-gray-200 rounded-xl p-8 flex items-center min-h-[140px] bg-white">
+                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex items-center min-h-[140px] bg-white">
                     <h3 className="text-3xl font-medium text-black italic leading-tight">50,000+ Sq Ft<br/>Installed</h3>
-                </div>
-                <div className="border border-gray-200 rounded-xl p-8 flex items-center min-h-[140px] bg-white">
+                </motion.div>
+                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex items-center min-h-[140px] bg-white">
                     <h3 className="text-3xl font-medium text-black italic leading-tight">200+ Happy<br/>Homeowners</h3>
-                </div>
-                <div className="border border-gray-200 rounded-xl p-8 flex items-center min-h-[140px] bg-white">
+                </motion.div>
+                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex items-center min-h-[140px] bg-white">
                     <h3 className="text-3xl font-medium text-black italic leading-tight">5 years of<br/>Warranty</h3>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
 
             {/* Before / After Section */}
-            <div className="mt-24 lg:mt-32 w-full mx-auto flex flex-col gap-8 pb-10">
+            <motion.div variants={fadeUpItem} className="mt-24 lg:mt-32 w-full mx-auto flex flex-col gap-8 pb-10">
                 {/* Images Container */}
                 <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-md overflow-hidden shadow-lg select-none">
                     {/* After Image (Background) */}
@@ -141,9 +143,9 @@ function Stats() {
                         After
                     </button>
                 </div>
-            </div>
+            </motion.div>
 
-        </section>
+        </motion.section>
     )
 }
 

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, Phone } from 'lucide-react';
+import { motion } from 'framer-motion';
 import faqImg from '../assets/faq.png';
+import { sectionMotionProps } from '../lib/motion';
 
 const faqs = [
   {
@@ -29,7 +31,7 @@ export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(2);
 
   return (
-    <section className="bg-[#111111] text-white py-16 lg:py-24">
+    <motion.section {...sectionMotionProps} className="bg-[#111111] text-white py-16 lg:py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -102,6 +104,6 @@ export default function Faq() {
         </div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

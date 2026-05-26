@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { sectionMotionProps } from '../lib/motion';
 
 function Calculator() {
   const [sqFt, setSqFt] = useState<string>('');
@@ -12,7 +14,7 @@ function Calculator() {
   };
 
   return (
-    <section className="bg-[#151515] text-white overflow-hidden">
+    <motion.section {...sectionMotionProps} className="bg-[#151515] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Row */}
@@ -61,7 +63,7 @@ function Calculator() {
         <div className="w-full h-[1px] bg-white/10 mb-12"></div>
         
       </div>
-    </section>
+    </motion.section>
   );
 }
 
