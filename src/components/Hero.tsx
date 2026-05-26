@@ -1,6 +1,6 @@
 import { ArrowDown } from 'lucide-react';
 import { motion } from 'framer-motion';
-import hero from "../assets/hero.png";
+import hero from "../assets/hero.webp";
 import { fadeUpItem, sectionMotionProps, staggerContainer } from '../lib/motion';
 
 export default function Hero() {
@@ -11,24 +11,30 @@ export default function Hero() {
         >
             
             
-            {/* Mobile Layout (Stacked) */}
-            <motion.div variants={staggerContainer} className="md:hidden flex flex-col gap-8 w-full text-center items-center mt-8">
-                <motion.div variants={fadeUpItem} className="max-w-sm text-gray-500 text-base text-left">
-                    <p>We have been laying high-quality paving stones for yards, driveways and entrance areas for 8 years.</p>
-                </motion.div>
-                
-                <motion.img variants={fadeUpItem} src={hero} alt="Paving Stones" className="w-[90%] max-w-md mx-auto h-auto object-contain my-2" />
-
-                <motion.h1 variants={fadeUpItem} className="text-sm font-['Anta'] font-normal leading-[0.2] text-black text-left w-full max-w-md">
-                    We will install<br/>
-                    paving stones<br/>
-                    that will last at<br/>
-                    least <span className="text-[#FF4D11]">20 years</span>
+            {/* Mobile Layout */}
+            <motion.div variants={staggerContainer} className="md:hidden flex flex-col w-full relative pt-4 pb-8 overflow-visible">
+                {/* Top Text */}
+                <motion.h1 variants={fadeUpItem} className="text-[1.5rem] sm:text-[1.75rem] font-['Anta'] font-normal leading-[1.1] text-black text-left self-end pr-4 w-[75%] sm:w-[60%] z-10">
+                    We will install paving<br/>
+                    stones that will last<br/>
+                    at least <span className="text-[#FF4D11]">20 years</span>
                 </motion.h1>
                 
-                <motion.button variants={fadeUpItem} className="bg-[#1D1D1D] text-white p-4 rounded-full mt-4 flex items-center justify-center shadow-xl border-[6px] border-white">
-                    <ArrowDown className="w-6 h-6" />
-                </motion.button>
+                {/* Image */}
+                <motion.div variants={fadeUpItem} className="w-[115%] -ml-[5%] relative z-0 mt-2 -mb-8 pointer-events-none">
+                    <img src={hero} alt="Paving Stones" className="w-full h-auto object-contain" />
+                </motion.div>
+
+                {/* Bottom Section */}
+                <div className="flex justify-between items-end px-4 relative z-10 mt-2">
+                    <motion.div variants={fadeUpItem} className="w-[60%] text-gray-500 text-[13px] sm:text-sm text-left leading-snug">
+                        <p>We have been laying high-quality paving stones for yards, driveways and entrance areas for 8 years.</p>
+                    </motion.div>
+                    
+                    <motion.button variants={fadeUpItem} className="bg-[#1D1D1D] hover:bg-black text-white p-3 sm:p-4 rounded-full flex items-center justify-center shadow-xl border-[5px] border-white cursor-pointer transition-colors -mb-4 mr-2">
+                        <ArrowDown className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />
+                    </motion.button>
+                </div>
             </motion.div>
 
             {/* Desktop Layout (Absolute Positioning) */}

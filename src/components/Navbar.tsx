@@ -4,14 +4,15 @@ import logo from '../assets/logo.png';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [activeLink, setActiveLink] = useState('Home');
 
     const navLinks = [
-        { name: 'Home', href: '#home', active: true },
-        { name: 'About Us', href: '#about-us', active: false },
-        { name: 'Services', href: '#services', active: false },
-        { name: 'Reviews', href: '#reviews', active: false },
-        { name: 'Work Process', href: '#work-process', active: false },
-        { name: 'FAQ', href: '#faq', active: false },
+        { name: 'Home', href: '#home' },
+        { name: 'About Us', href: '#about-us' },
+        { name: 'Services', href: '#services' },
+        { name: 'Reviews', href: '#reviews' },
+        { name: 'Work Process', href: '#work-process' },
+        { name: 'FAQ', href: '#faq' },
     ];
 
     return (
@@ -29,8 +30,9 @@ function Navbar() {
                             <li key={link.name}>
                                 <a 
                                     href={link.href}
+                                    onClick={() => setActiveLink(link.name)}
                                     className={`cursor-pointer transition-colors block ${
-                                        link.active ? 'bg-[#1D1D1D] text-white px-5 py-2 rounded-md' : 'hover:text-gray-900'
+                                        activeLink === link.name ? 'bg-[#1D1D1D] text-white px-5 py-2 rounded-md' : 'hover:text-gray-900'
                                     }`}
                                 >
                                     {link.name}
@@ -69,9 +71,12 @@ function Navbar() {
                                 <li key={link.name}>
                                     <a 
                                         href={link.href}
-                                        onClick={() => setIsOpen(false)}
+                                        onClick={() => {
+                                            setIsOpen(false);
+                                            setActiveLink(link.name);
+                                        }}
                                         className={`cursor-pointer transition-colors block px-3 py-2 rounded-md ${
-                                            link.active ? 'bg-[#1D1D1D] text-white' : 'hover:bg-gray-50 hover:text-gray-900'
+                                            activeLink === link.name ? 'bg-[#1D1D1D] text-white' : 'hover:bg-gray-50 hover:text-gray-900'
                                         }`}
                                     >
                                         {link.name}
