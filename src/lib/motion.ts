@@ -7,7 +7,7 @@ export const sectionMotionProps = {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.4, ease: 'easeOut' },
     },
   },
 } as const;
@@ -15,7 +15,7 @@ export const sectionMotionProps = {
 export const staggerContainer = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.12 },
+    transition: { staggerChildren: 0.08 },
   },
 } as const;
 
@@ -24,6 +24,6 @@ export const fadeUpItem = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.45, ease: 'easeOut' },
+    transition: { duration: 0.3, ease: 'easeOut' },
   },
 } as const;

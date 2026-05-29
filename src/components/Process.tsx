@@ -3,9 +3,13 @@ import { fadeUpItem, sectionMotionProps, staggerContainer } from '../lib/motion'
 
 export default function Process() {
   return (
-    <motion.section {...sectionMotionProps} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32">
+    <motion.section
+      {...sectionMotionProps}
+      id="work-process"
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 scroll-mt-24"
+    >
       <motion.div variants={staggerContainer} className="max-w-4xl mx-auto pl-4 lg:pl-12">
-        <h4 className="text-gray-500 mb-16 text-[1.1rem]">Our Work Process</h4>
+        <h4 className="text-gray-500 mb-16 text-2xl md:text-3xl font-medium">Our Work Process</h4>
         
         <div className="flex flex-col gap-16">
           <motion.div

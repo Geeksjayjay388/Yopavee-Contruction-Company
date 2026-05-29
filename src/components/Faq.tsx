@@ -31,7 +31,11 @@ export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(2);
 
   return (
-    <motion.section {...sectionMotionProps} className="bg-[#111111] text-white py-16 lg:py-24">
+    <motion.section
+      {...sectionMotionProps}
+      id="faq"
+      className="bg-[#111111] text-white py-16 lg:py-24 scroll-mt-24"
+    >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

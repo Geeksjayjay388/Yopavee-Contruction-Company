@@ -94,8 +94,8 @@ function Reviews() {
   return (
     <motion.section {...sectionMotionProps} className="py-16 lg:py-24 bg-white overflow-hidden" id="reviews">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-medium text-black mb-4 tracking-tight">See what our clients say about us</h2>
-        <p className="text-gray-400 max-w-sm mx-auto text-[15px] leading-snug">
+        <h2 className="text-5xl md:text-6xl font-medium text-black mb-4 tracking-tight">See what our clients say about us</h2>
+        <p className="text-gray-400 max-w-sm mx-auto text-lg md:text-xl leading-snug">
           We have over 400+ positive reviews from real customers. Over 50+ regular customers.
         </p>
       </div>

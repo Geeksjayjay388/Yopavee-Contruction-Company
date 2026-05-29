@@ -7,7 +7,8 @@ export default function Hero() {
     return (
         <motion.section
             {...sectionMotionProps}
-            className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-12 lg:pt-0 lg:pb-20 min-h-[calc(100vh-80px)] flex flex-col md:block items-center justify-center overflow-hidden font-sans"
+            id="home"
+            className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-12 lg:pt-0 lg:pb-20 min-h-[calc(100vh-80px)] flex flex-col md:block items-center justify-center overflow-hidden font-sans scroll-mt-24"
         >
             
             

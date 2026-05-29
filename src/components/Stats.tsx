@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import stats from "../assets/statsimages.png";
 import beforeImg from "../assets/before.png";
@@ -6,11 +6,89 @@ import afterImg from "../assets/after.png";
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { fadeUpItem, sectionMotionProps, staggerContainer } from '../lib/motion';
 
-function Stats() {
-    const [sliderPosition, setSliderPosition] = useState(50);
+type CountUpProps = {
+    value: number;
+    start: boolean;
+    duration?: number;
+    suffix?: string;
+    prefix?: string;
+    format?: (value: number) => string;
+};
+
+function CountUp({ value, start, duration = 1200, suffix = '', prefix = '', format }: CountUpProps) {
+    const [displayValue, setDisplayValue] = useState(0);
+
+    useEffect(() => {
+        if (!start) {
+            return;
+        }
+
+        let startTime: number | null = null;
+        let frameId: number;
+
+        const animate = (timestamp: number) => {
+            if (startTime === null) {
+                startTime = timestamp;
+            }
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            const nextValue = Math.round(progress * value);
+            setDisplayValue(nextValue);
+
+            if (progress < 1) {
+                frameId = requestAnimationFrame(animate);
+            }
+        };
+
+        frameId = requestAnimationFrame(animate);
+
+        return () => {
+            cancelAnimationFrame(frameId);
+        };
+    }, [start, value, duration]);
+
+    const formattedValue = format ? format(displayValue) : displayValue.toString();
 
     return (
-        <motion.section {...sectionMotionProps} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <>
+            {prefix}
+            {formattedValue}
+            {suffix}
+        </>
+    );
+}
+
+function Stats() {
+    const [sliderPosition, setSliderPosition] = useState(50);
+    const statsRef = useRef<HTMLDivElement | null>(null);
+    const [statsInView, setStatsInView] = useState(() => typeof IntersectionObserver === 'undefined');
+
+    useEffect(() => {
+        if (statsInView) {
+            return;
+        }
+
+        const node = statsRef.current;
+        if (!node) {
+            return;
+        }
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setStatsInView(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.35 }
+        );
+
+        observer.observe(node);
+
+        return () => observer.disconnect();
+    }, [statsInView]);
+
+    return (
+        <motion.section {...sectionMotionProps} id="about-us" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 scroll-mt-24">
             <motion.div variants={staggerContainer} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                 
                 {/* Left Side: Images */}
@@ -45,22 +123,32 @@ function Stats() {
             </motion.div>
 
             {/* Stats Cards Section */}
-            <motion.div variants={staggerContainer} className="mt-24 lg:mt-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div
+                ref={statsRef}
+                variants={staggerContainer}
+                className="mt-24 lg:mt-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
                 {/* Top Row Cards */}
                 <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex flex-col justify-between gap-12 bg-white">
-                    <h3 className="text-[2.5rem] font-medium text-black leading-none">8+ years</h3>
+                    <h3 className="text-[2.5rem] font-medium text-black leading-none">
+                        <CountUp value={8} start={statsInView} suffix="+ years" />
+                    </h3>
                     <p className="text-gray-500 text-[15px] leading-snug max-w-[220px]">
                         We have been working with paving stones since 2017
                     </p>
                 </motion.div>
                 <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex flex-col justify-between gap-12 bg-white">
-                    <h3 className="text-[2.5rem] font-medium text-black leading-none">500+</h3>
+                    <h3 className="text-[2.5rem] font-medium text-black leading-none">
+                        <CountUp value={500} start={statsInView} suffix="+" />
+                    </h3>
                     <p className="text-gray-500 text-[15px] leading-snug max-w-[220px]">
                         Projects delivered on time and on budget.
                     </p>
                 </motion.div>
                 <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex flex-col justify-between gap-12 bg-white">
-                    <h3 className="text-[2.5rem] font-medium text-black leading-none">98%</h3>
+                    <h3 className="text-[2.5rem] font-medium text-black leading-none">
+                        <CountUp value={98} start={statsInView} suffix="%" />
+                    </h3>
                     <p className="text-gray-500 text-[15px] leading-snug max-w-[220px]">
                         98% clients would hire us again — and most already have.
                     </p>
@@ -68,13 +156,25 @@ function Stats() {
 
                 {/* Bottom Row Cards */}
                 <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex items-center min-h-[140px] bg-white">
-                    <h3 className="text-3xl font-medium text-black italic leading-tight">50,000+ Sq Ft<br/>Installed</h3>
+                    <h3 className="text-3xl font-medium text-black italic leading-tight">
+                        <CountUp value={50000} start={statsInView} suffix="+ Sq Ft" format={(val) => val.toLocaleString()} />
+                        <br />
+                        Installed
+                    </h3>
                 </motion.div>
                 <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex items-center min-h-[140px] bg-white">
-                    <h3 className="text-3xl font-medium text-black italic leading-tight">200+ Happy<br/>Homeowners</h3>
+                    <h3 className="text-3xl font-medium text-black italic leading-tight">
+                        <CountUp value={200} start={statsInView} suffix="+ Happy" />
+                        <br />
+                        Homeowners
+                    </h3>
                 </motion.div>
                 <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex items-center min-h-[140px] bg-white">
-                    <h3 className="text-3xl font-medium text-black italic leading-tight">5 years of<br/>Warranty</h3>
+                    <h3 className="text-3xl font-medium text-black italic leading-tight">
+                        <CountUp value={5} start={statsInView} suffix=" years of" />
+                        <br />
+                        Warranty
+                    </h3>
                 </motion.div>
             </motion.div>
 

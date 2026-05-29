@@ -1,7 +1,10 @@
 import { ArrowUpRight } from 'lucide-react';
 import footerLogo from '../assets/footerlogo.png';
+import { useContact } from '../context/ContactContext';
 
 function Footer() {
+  const { openContact } = useContact();
+
   return (
     <footer className="bg-[#151515] text-white pt-10">
       <div className="w-full">
@@ -62,6 +65,7 @@ function Footer() {
               <li className="hover:text-white cursor-pointer transition-colors w-fit">Reviews</li>
               <li className="hover:text-white cursor-pointer transition-colors w-fit">Work Process</li>
               <li className="hover:text-white cursor-pointer transition-colors w-fit">FAQ</li>
+              <li onClick={openContact} className="text-[#FF4D11] hover:text-white font-medium cursor-pointer transition-colors w-fit">Contact Sales</li>
             </ul>
           </div>
           <div className="p-8 lg:p-12">
@@ -85,9 +89,14 @@ function Footer() {
           </div>
 
           {/* Row 3: Col 2+3, Col 4 */}
-          <div className="md:col-span-2 p-8 lg:p-12 flex items-center justify-between group cursor-pointer hover:bg-white/5 transition-colors">
+          <div className="md:col-span-2 p-8 lg:p-12 flex items-center justify-between gap-6 group hover:bg-white/5 transition-colors border-t border-gray-800">
             <span className="text-xl lg:text-[1.75rem] font-medium tracking-wide">Exampleemail@gmail.com</span>
-            <ArrowUpRight className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
+            <button 
+              onClick={openContact}
+              className="bg-[#FF4D11] text-white px-6 py-2.5 rounded-md flex items-center gap-2 font-medium hover:bg-[#E6450F] transition-colors shrink-0 shadow-lg shadow-[#FF4D11]/25 hover:shadow-[#FF4D11]/35 hover:-translate-y-0.5 active:translate-y-0"
+            >
+              Contact Sales
+            </button>
           </div>
           <div className="p-8 lg:p-12 flex items-center justify-center lg:justify-start">
             <img src={footerLogo} alt="Yopavve Logo" className="h-8 md:h-10" />

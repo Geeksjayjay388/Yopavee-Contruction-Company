@@ -2,14 +2,18 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Home from './pages/Home.tsx';
 import Loader from './components/Loader.tsx';
+import ContactModal from './components/ContactModal.tsx';
+import { ContactProvider } from './context/ContactContext.tsx';
+
+type TimeoutId = ReturnType<typeof setTimeout>;
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    let timeoutId: number | undefined;
+    let timeoutId: TimeoutId | undefined;
     const handleLoad = () => {
-      timeoutId = window.setTimeout(() => setIsLoading(false), 900);
+      timeoutId = setTimeout(() => setIsLoading(false), 900);
     };
 
     if (document.readyState === 'complete') {
@@ -21,7 +25,7 @@ function App() {
     return () => {
       window.removeEventListener('load', handleLoad);
       if (timeoutId) {
-        window.clearTimeout(timeoutId);
+        clearTimeout(timeoutId);
       }
     };
   }, []);
@@ -34,11 +38,13 @@ function App() {
   }, [isLoading]);
 
   return (
-    <>
+    <ContactProvider>
       <AnimatePresence>{isLoading && <Loader />}</AnimatePresence>
       <Home />
-    </>
+      <ContactModal />
+    </ContactProvider>
   )
 }
 
 export default App
+

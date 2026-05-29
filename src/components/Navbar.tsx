@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Phone, Menu, X } from 'lucide-react';
 import logo from '../assets/logo.png';
+import { useContact } from '../context/ContactContext';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [activeLink, setActiveLink] = useState('Home');
+    const { openContact } = useContact();
 
     const navLinks = [
         { name: 'Home', href: '#home' },
@@ -19,7 +21,7 @@ function Navbar() {
         <header className="bg-white border-b border-gray-100 fixed top-0 w-full z-50">
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
                 {/* Logo */}
-                <a href="/" className="flex-shrink-0 block cursor-pointer">
+                <a href="#home" className="flex-shrink-0 block cursor-pointer">
                     <img src={logo} alt="Yopavve Logo" className="h-8 object-contain" />
                 </a>
 
@@ -44,9 +46,12 @@ function Navbar() {
 
                 {/* Desktop Contact Button */}
                 <div className="hidden md:block flex-shrink-0">
-                    <button className="bg-[#FF4D11] text-white px-6 py-2.5 rounded-md flex items-center gap-2 font-medium hover:bg-[#E6450F] transition-colors">
+                    <button 
+                        onClick={openContact}
+                        className="bg-[#FF4D11] text-white px-6 py-2.5 rounded-md flex items-center gap-2 font-medium hover:bg-[#E6450F] transition-colors"
+                    >
                         <Phone className="w-4 h-4" />
-                        Contact Us
+                        Contact Sales
                     </button>
                 </div>
 
@@ -85,9 +90,15 @@ function Navbar() {
                             ))}
                         </ul>
                         <div className="mt-4 pt-4 border-t border-gray-100">
-                            <button className="w-full bg-[#FF4D11] text-white px-6 py-3 rounded-md flex justify-center items-center gap-2 font-medium hover:bg-[#E6450F] transition-colors">
+                            <button 
+                                onClick={() => {
+                                    setIsOpen(false);
+                                    openContact();
+                                }}
+                                className="w-full bg-[#FF4D11] text-white px-6 py-3 rounded-md flex justify-center items-center gap-2 font-medium hover:bg-[#E6450F] transition-colors"
+                            >
                                 <Phone className="w-4 h-4" />
-                                Contact Us
+                                Contact Sales
                             </button>
                         </div>
                     </div>
