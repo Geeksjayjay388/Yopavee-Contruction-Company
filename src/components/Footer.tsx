@@ -65,7 +65,16 @@ function Footer() {
               <li className="hover:text-white cursor-pointer transition-colors w-fit">Reviews</li>
               <li className="hover:text-white cursor-pointer transition-colors w-fit">Work Process</li>
               <li className="hover:text-white cursor-pointer transition-colors w-fit">FAQ</li>
-              <li onClick={openContact} className="text-[#FF4D11] hover:text-white font-medium cursor-pointer transition-colors w-fit">Contact Sales</li>
+              <li 
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  openContact();
+                }} 
+                className="text-[#FF4D11] hover:text-white font-medium cursor-pointer transition-colors w-fit"
+              >
+                Contact Sales
+              </li>
             </ul>
           </div>
           <div className="p-8 lg:p-12">
@@ -92,8 +101,13 @@ function Footer() {
           <div className="md:col-span-2 p-8 lg:p-12 flex items-center justify-between gap-6 group hover:bg-white/5 transition-colors border-t border-gray-800">
             <span className="text-xl lg:text-[1.75rem] font-medium tracking-wide">Exampleemail@gmail.com</span>
             <button 
-              onClick={openContact}
-              className="bg-[#FF4D11] text-white px-6 py-2.5 rounded-md flex items-center gap-2 font-medium hover:bg-[#E6450F] transition-colors shrink-0 shadow-lg shadow-[#FF4D11]/25 hover:shadow-[#FF4D11]/35 hover:-translate-y-0.5 active:translate-y-0"
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openContact();
+              }}
+              className="bg-[#FF4D11] text-white px-6 py-2.5 rounded-md flex items-center gap-2 font-medium hover:bg-[#E6450F] transition-colors shrink-0 shadow-lg shadow-[#FF4D11]/25 hover:shadow-[#FF4D11]/35 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer relative z-10"
             >
               Contact Sales
             </button>
