@@ -19,7 +19,7 @@ function Calculator() {
         
         {/* Top Row */}
         <div className="flex flex-col md:flex-row md:items-end justify-between py-16 lg:py-24 gap-8">
-          <h2 className="text-4xl md:text-5xl font-medium tracking-tight max-w-2xl leading-[1.2]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight max-w-2xl leading-[1.2]">
             Get an <span className="text-[#FF4D11]">instant price</span><br className="hidden md:block" /> estimate for your project
           </h2>
           <p className="text-gray-400 max-w-[280px] text-[15px] leading-snug">
@@ -50,7 +50,7 @@ function Calculator() {
           {/* Price Display */}
           <div className="flex flex-col gap-2.5">
             <span className="text-[13px] text-gray-300 font-medium">Approximate price:</span>
-            <div className="border border-white/20 rounded-md px-6 py-3.5 min-w-[220px]">
+            <div className="border border-white/20 rounded-md px-6 py-3.5 min-w-[200px] sm:min-w-[220px]">
               <span className="text-xl font-medium tracking-wide">
                 {sqFt ? calculatePrice() : '$159.95'}
               </span>

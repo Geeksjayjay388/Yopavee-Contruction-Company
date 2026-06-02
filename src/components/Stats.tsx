@@ -98,7 +98,7 @@ function Stats() {
                 
                 {/* Right Side: Quote and Author */}
                 <motion.div variants={fadeUpItem} className="flex flex-col gap-8 lg:col-span-7">
-                    <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] leading-none font-medium text-[#1A1A1A] tracking-tight">
+                    <h2 className="text-2xl sm:text-3xl lg:text-[2.75rem] leading-none font-medium text-[#1A1A1A] tracking-tight">
                         I built my team around one rule - don't leave until the client is happy. Every person on my crew takes your project personally, not just professionally.
                     </h2>
                     
@@ -126,27 +126,27 @@ function Stats() {
             <motion.div
                 ref={statsRef}
                 variants={staggerContainer}
-                className="mt-24 lg:mt-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="mt-16 sm:mt-24 lg:mt-32 flex gap-4 sm:gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-3 overflow-x-auto sm:overflow-visible pb-4 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory sm:snap-none"
             >
                 {/* Top Row Cards */}
-                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex flex-col justify-between gap-12 bg-white">
-                    <h3 className="text-[2.5rem] font-medium text-black leading-none">
+                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-6 sm:p-8 flex flex-col justify-between gap-12 bg-white shrink-0 min-w-[260px] sm:min-w-0 snap-start">
+                    <h3 className="text-2xl sm:text-[2.5rem] font-medium text-black leading-none">
                         <CountUp value={8} start={statsInView} suffix="+ years" />
                     </h3>
                     <p className="text-gray-500 text-[15px] leading-snug max-w-[220px]">
                         We have been working with paving stones since 2017
                     </p>
                 </motion.div>
-                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex flex-col justify-between gap-12 bg-white">
-                    <h3 className="text-[2.5rem] font-medium text-black leading-none">
+                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-6 sm:p-8 flex flex-col justify-between gap-12 bg-white shrink-0 min-w-[260px] sm:min-w-0 snap-start">
+                    <h3 className="text-2xl sm:text-[2.5rem] font-medium text-black leading-none">
                         <CountUp value={500} start={statsInView} suffix="+" />
                     </h3>
                     <p className="text-gray-500 text-[15px] leading-snug max-w-[220px]">
                         Projects delivered on time and on budget.
                     </p>
                 </motion.div>
-                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex flex-col justify-between gap-12 bg-white">
-                    <h3 className="text-[2.5rem] font-medium text-black leading-none">
+                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-6 sm:p-8 flex flex-col justify-between gap-12 bg-white shrink-0 min-w-[260px] sm:min-w-0 snap-start">
+                    <h3 className="text-2xl sm:text-[2.5rem] font-medium text-black leading-none">
                         <CountUp value={98} start={statsInView} suffix="%" />
                     </h3>
                     <p className="text-gray-500 text-[15px] leading-snug max-w-[220px]">
@@ -155,22 +155,22 @@ function Stats() {
                 </motion.div>
 
                 {/* Bottom Row Cards */}
-                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex items-center min-h-[140px] bg-white">
-                    <h3 className="text-3xl font-medium text-black italic leading-tight">
+                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-6 sm:p-8 flex items-center min-h-[140px] bg-white shrink-0 min-w-[260px] sm:min-w-0 snap-start">
+                    <h3 className="text-2xl sm:text-3xl font-medium text-black italic leading-tight">
                         <CountUp value={50000} start={statsInView} suffix="+ Sq Ft" format={(val) => val.toLocaleString()} />
                         <br />
                         Installed
                     </h3>
                 </motion.div>
-                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex items-center min-h-[140px] bg-white">
-                    <h3 className="text-3xl font-medium text-black italic leading-tight">
+                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-6 sm:p-8 flex items-center min-h-[140px] bg-white shrink-0 min-w-[260px] sm:min-w-0 snap-start">
+                    <h3 className="text-2xl sm:text-3xl font-medium text-black italic leading-tight">
                         <CountUp value={200} start={statsInView} suffix="+ Happy" />
                         <br />
                         Homeowners
                     </h3>
                 </motion.div>
-                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-8 flex items-center min-h-[140px] bg-white">
-                    <h3 className="text-3xl font-medium text-black italic leading-tight">
+                <motion.div variants={fadeUpItem} className="border border-gray-200 rounded-xl p-6 sm:p-8 flex items-center min-h-[140px] bg-white shrink-0 min-w-[260px] sm:min-w-0 snap-start">
+                    <h3 className="text-2xl sm:text-3xl font-medium text-black italic leading-tight">
                         <CountUp value={5} start={statsInView} suffix=" years of" />
                         <br />
                         Warranty
@@ -179,16 +179,16 @@ function Stats() {
             </motion.div>
 
             {/* Before / After Section */}
-            <motion.div variants={fadeUpItem} className="mt-24 lg:mt-32 w-full mx-auto flex flex-col gap-8 pb-10">
+            <motion.div variants={fadeUpItem} className="mt-16 sm:mt-24 lg:mt-32 w-full mx-auto flex flex-col gap-8 pb-10">
                 {/* Images Container */}
                 <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-md overflow-hidden shadow-lg select-none">
-                    {/* After Image (Background) */}
-                    <img src={afterImg} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+                    {/* Before Image (Background) */}
+                    <img src={beforeImg} alt="Before" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
                     
-                    {/* Before Image (Foreground, clipped) */}
+                    {/* After Image (Foreground, clipped) */}
                     <img 
-                        src={beforeImg} 
-                        alt="Before" 
+                        src={afterImg} 
+                        alt="After" 
                         className="absolute inset-0 w-full h-full object-cover pointer-events-none" 
                         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
                     />
@@ -221,7 +221,11 @@ function Stats() {
 
                 {/* Controls */}
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-                    <button className="px-10 py-2.5 border border-gray-300 rounded-md text-gray-800 font-medium bg-white hover:bg-gray-50 transition-colors w-full sm:w-auto text-lg shadow-sm">
+                    <button
+                        type="button"
+                        onClick={() => setSliderPosition(0)}
+                        className="px-10 py-2.5 border border-gray-300 rounded-md text-gray-800 font-medium bg-white hover:bg-gray-50 transition-colors w-full sm:w-auto text-lg shadow-sm"
+                    >
                         Before
                     </button>
                     
@@ -239,7 +243,11 @@ function Stats() {
                         </button>
                     </div>
 
-                    <button className="px-10 py-2.5 bg-[#FF4D11] text-white rounded-md font-medium hover:bg-[#e6450f] transition-colors w-full sm:w-auto text-lg shadow-sm">
+                    <button
+                        type="button"
+                        onClick={() => setSliderPosition(100)}
+                        className="px-10 py-2.5 bg-[#FF4D11] text-white rounded-md font-medium hover:bg-[#e6450f] transition-colors w-full sm:w-auto text-lg shadow-sm"
+                    >
                         After
                     </button>
                 </div>

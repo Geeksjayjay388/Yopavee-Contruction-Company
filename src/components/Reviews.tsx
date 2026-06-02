@@ -36,7 +36,7 @@ const reviewsData = [
 
 function ReviewCard({ isActive, review }: { isActive?: boolean, review: typeof reviewsData[0] }) {
   return (
-    <div className={`flex flex-col md:flex-row border border-gray-200 rounded-xl bg-white p-2 gap-6 h-auto md:h-[400px] transition-all duration-500 ${isActive ? 'shadow-sm scale-100 opacity-100' : 'scale-95 opacity-50'}`}>
+    <div className={`flex flex-col md:flex-row border border-gray-200 rounded-xl bg-white p-4 sm:p-3 md:p-2 gap-6 h-auto md:h-[400px] transition-all duration-500 ${isActive ? 'shadow-sm scale-100 opacity-100' : 'scale-95 opacity-50'}`}>
       {/* Video Placeholder */}
       <div className="w-full md:w-[45%] rounded-lg relative flex items-center justify-center shrink-0 min-h-[250px] md:min-h-full overflow-hidden bg-gray-100">
         <img src={reviewVideo} alt="Client review video" className="absolute inset-0 w-full h-full object-cover" />
@@ -47,7 +47,7 @@ function ReviewCard({ isActive, review }: { isActive?: boolean, review: typeof r
       </div>
       
       {/* Content */}
-      <div className="flex flex-col flex-grow py-5 pr-6 pl-4 md:pl-0">
+      <div className="flex flex-col flex-grow py-5 pr-4 sm:pr-6 pl-4 md:pl-0">
         <div className="flex justify-between items-center mb-6">
           <span className="font-semibold text-[13px] text-black">{review.type}</span>
           <span className="text-gray-500 text-[13px] font-medium">{review.time}</span>
@@ -94,7 +94,7 @@ function Reviews() {
   return (
     <motion.section {...sectionMotionProps} className="py-16 lg:py-24 bg-white overflow-hidden" id="reviews">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-        <h2 className="text-5xl md:text-6xl font-medium text-black mb-4 tracking-tight">See what our clients say about us</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-black mb-4 tracking-tight">See what our clients say about us</h2>
         <p className="text-gray-400 max-w-sm mx-auto text-lg md:text-xl leading-snug">
           We have over 400+ positive reviews from real customers. Over 50+ regular customers.
         </p>
@@ -102,7 +102,7 @@ function Reviews() {
 
       {/* Carousel Container */}
       <div className="relative w-full flex justify-center items-center py-4">
-        <div className="flex items-center justify-center w-[250%] md:w-[150%] xl:w-[120%] gap-4 lg:gap-8">
+        <div className="flex items-center justify-center w-full md:w-[150%] xl:w-[120%] gap-4 lg:gap-8">
            {/* Left Faded Card */}
            <div 
              className="hidden md:block w-full max-w-[800px] opacity-30 scale-[0.85] cursor-pointer transition-all hover:opacity-50"
@@ -130,7 +130,7 @@ function Reviews() {
       <div className="flex items-center justify-center gap-6 mt-12">
         <button 
           onClick={prevSlide}
-          className="w-14 h-14 rounded-full border border-gray-300 flex items-center justify-center bg-white hover:bg-gray-50 transition-colors shadow-sm cursor-pointer"
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-gray-300 flex items-center justify-center bg-white hover:bg-gray-50 transition-colors shadow-sm cursor-pointer"
         >
             <ArrowLeft className="w-5 h-5 text-gray-600" strokeWidth={1.5} />
         </button>
@@ -146,7 +146,7 @@ function Reviews() {
         </div>
         <button 
           onClick={nextSlide}
-          className="w-14 h-14 rounded-full border border-gray-300 flex items-center justify-center bg-white hover:bg-gray-50 transition-colors shadow-sm cursor-pointer"
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-gray-300 flex items-center justify-center bg-white hover:bg-gray-50 transition-colors shadow-sm cursor-pointer"
         >
             <ArrowRight className="w-5 h-5 text-gray-600" strokeWidth={1.5} />
         </button>

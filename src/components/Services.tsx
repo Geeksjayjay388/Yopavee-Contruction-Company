@@ -26,7 +26,7 @@ function Services() {
     >
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-        <h2 className="text-4xl md:text-5xl font-semibold text-black tracking-tight">Our Services</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black tracking-tight">Our Services</h2>
         <p className="text-gray-500 max-w-[320px] text-lg leading-snug">
           We work with many types of work - all so that you can find the perfect service for you
         </p>
@@ -78,15 +78,15 @@ function Services() {
       {/* Bottom Action Bar */}
       <motion.div variants={fadeUpItem} className="mt-16 flex flex-col md:flex-row items-stretch gap-4">
         {/* Black Banner */}
-        <div className="flex-grow bg-black rounded-full px-6 py-4 flex items-center gap-4 shadow-lg">
+        <div className="flex-grow bg-black rounded-2xl md:rounded-full px-5 sm:px-6 py-4 flex items-start sm:items-center gap-4 shadow-lg">
           <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 border-[1.5px] border-gray-600">
             <img src="https://i.pravatar.cc/150?u=robert_williams" alt="Avatar" className="w-full h-full object-cover" />
           </div>
-          <span className="text-white text-xl sm:text-[1.35rem] font-medium">Let's start working on your project!</span>
+          <span className="text-white text-lg sm:text-[1.35rem] font-medium">Let's start working on your project!</span>
         </div>
 
         {/* Call Button */}
-        <button className="bg-[#FF4D11] text-white px-10 py-4 rounded-full flex items-center justify-center gap-3 font-medium text-lg hover:bg-[#e6450f] transition-colors shrink-0 shadow-lg">
+        <button className="bg-[#FF4D11] text-white px-8 sm:px-10 py-4 rounded-full flex items-center justify-center gap-3 font-medium text-base sm:text-lg hover:bg-[#e6450f] transition-colors shrink-0 shadow-lg">
           <Phone className="w-5 h-5" />
           Book a Call
         </button>
@@ -96,4 +96,3 @@ function Services() {
 }
 
 export default Services;
-

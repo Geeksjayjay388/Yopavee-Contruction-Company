@@ -40,7 +40,7 @@ export default function Faq() {
         
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tight">Still Have Questions?</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight">Still Have Questions?</h2>
         </div>
 
         {/* Accordion */}
@@ -54,7 +54,7 @@ export default function Faq() {
               >
                 <button 
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full flex items-center justify-between px-8 py-6 text-left focus:outline-none cursor-pointer"
+                  className="w-full flex items-center justify-between px-5 sm:px-8 py-5 sm:py-6 text-left focus:outline-none cursor-pointer"
                 >
                   <span className={`font-medium ${isOpen ? 'text-white' : 'text-gray-200'} text-base md:text-lg`}>
                     {faq.q}
@@ -70,7 +70,7 @@ export default function Faq() {
                   className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-8 pb-7 text-white/90 text-[15px] md:text-base leading-relaxed pr-12">
+                    <p className="px-5 sm:px-8 pb-6 sm:pb-7 text-white/90 text-[15px] md:text-base leading-relaxed pr-6 sm:pr-12">
                       {faq.a}
                     </p>
                   </div>
@@ -81,7 +81,7 @@ export default function Faq() {
         </div>
 
         {/* Bottom Banner */}
-        <div className="relative w-full rounded-xl overflow-hidden min-h-[340px] flex flex-col items-center justify-center text-center p-8 border border-white/5 shadow-2xl">
+        <div className="relative w-full rounded-xl overflow-hidden min-h-[280px] sm:min-h-[320px] lg:min-h-[340px] flex flex-col items-center justify-center text-center p-6 sm:p-8 border border-white/5 shadow-2xl">
           {/* Background Image */}
           <img src={faqImg} alt="Pavers" className="absolute inset-0 w-full h-full object-cover" />
           
@@ -90,7 +90,7 @@ export default function Faq() {
           
           {/* Content */}
           <div className="relative z-10 flex flex-col items-center max-w-2xl mx-auto w-full">
-            <h3 className="text-3xl md:text-[2.5rem] font-semibold mb-3 tracking-tight">Pavers don't lay themselves.</h3>
+            <h3 className="text-2xl sm:text-3xl md:text-[2.5rem] font-semibold mb-3 tracking-tight">Pavers don't lay themselves.</h3>
             <p className="text-gray-200 text-sm md:text-[15px] mb-8">
               Contact us to start working on your project. We will respond within 24 hours
             </p>

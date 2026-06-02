@@ -77,7 +77,7 @@ export default function ContactModal() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: 'spring', duration: 0.5 }}
-            className="relative bg-white rounded-[24px] shadow-2xl overflow-hidden w-full max-w-4xl flex flex-col md:flex-row min-h-[550px] z-10"
+            className="relative bg-white rounded-[24px] shadow-2xl overflow-hidden w-full max-w-4xl flex flex-col md:flex-row md:min-h-[550px] z-10"
           >
             {/* Close Button */}
             <button
