@@ -8,37 +8,57 @@ export default function Hero() {
         <motion.section
             {...sectionMotionProps}
             id="home"
-            className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-12 lg:pt-0 lg:pb-20 min-h-[calc(100vh-80px)] flex flex-col md:block items-center justify-center overflow-hidden font-sans scroll-mt-24"
+            className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-12 lg:pt-0 lg:pb-20 min-h-[calc(100vh-80px)] flex flex-col md:block items-center justify-center font-sans scroll-mt-24"
         >
             
-            
             {/* Mobile Layout */}
-            <motion.div variants={staggerContainer} className="md:hidden flex flex-col w-full relative pt-4 pb-8 overflow-visible">
-                {/* Top Text */}
-                <motion.h1 variants={fadeUpItem} className="text-[1.5rem] sm:text-[1.75rem] font-['Anta'] font-normal leading-[1.1] text-black text-left self-end pr-4 w-[75%] sm:w-[60%] z-10">
-                    We will install paving<br/>
-                    stones that will last<br/>
-                    at least <span className="text-[#FF4D11]">20 years</span>
-                </motion.h1>
+            <motion.div 
+                variants={staggerContainer} 
+                className="md:hidden flex flex-col w-full relative pt-6 pb-6"
+            >
+                {/* 1. Title Heading Layer aligned right */}
+                <div className="w-full flex justify-end z-10 relative pr-2">
+                    <motion.h1 
+                        variants={fadeUpItem} 
+                        className="text-[22px] sm:text-[26px] font-['Anta'] font-normal leading-[1.15] text-black text-left w-[58%]"
+                    >
+                        We will install paving<br/>
+                        stones that will last<br/>
+                        at least <span className="text-[#FF4D11]">20 years</span>
+                    </motion.h1>
+                </div>
                 
-                {/* Image */}
-                <motion.div variants={fadeUpItem} className="w-[115%] -ml-[5%] relative z-0 mt-2 -mb-8 pointer-events-none">
-                    <img src={hero} alt="Paving Stones" className="w-full h-auto object-contain" />
+                {/* 2. Image Layer - Pulled upwards to sit under text */}
+                <motion.div 
+                    variants={fadeUpItem} 
+                    className="w-[116%] -ml-[8%] relative z-0 -mt-12 pointer-events-none"
+                >
+                    <img src={hero} alt="Paving Stones" className="w-full h-128 object-contain" />
                 </motion.div>
 
-                {/* Bottom Section */}
-                <div className="flex justify-between items-end px-4 relative z-10 mt-2">
-                    <motion.div variants={fadeUpItem} className="w-[60%] text-gray-500 text-[13px] sm:text-sm text-left leading-snug">
+                {/* 3. Bottom Layer - Keeps normal flow so content underneath doesn't overlap */}
+                <div className="w-full z-10 flex justify-between items-end px-2 -mt-10 sm:-mt-14 relative">
+                    
+                    {/* Paragraph on the bottom left */}
+                    <motion.div 
+                        variants={fadeUpItem} 
+                        className="w-[65%] text-[#1D1D1D] text-[13px] sm:text-sm text-left leading-tight font-normal opacity-90"
+                    >
                         <p>We have been laying high-quality paving stones for yards, driveways and entrance areas for 8 years.</p>
                     </motion.div>
                     
-                    <motion.button variants={fadeUpItem} className="bg-[#1D1D1D] hover:bg-black text-white p-3 sm:p-4 rounded-full flex items-center justify-center shadow-xl border-[5px] border-white cursor-pointer transition-colors -mb-4 mr-2">
-                        <ArrowDown className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />
+                    {/* Round action button on the bottom right */}
+                    <motion.button 
+                        variants={fadeUpItem} 
+                        className="bg-[#1D1D1D] hover:bg-black text-white w-12 h-12 rounded-full flex items-center justify-center shadow-2xl cursor-pointer transition-colors mr-2 mb-1"
+                        aria-label="Scroll down"
+                    >
+                        <ArrowDown className="w-5 h-5" strokeWidth={2} />
                     </motion.button>
                 </div>
             </motion.div>
 
-            {/* Desktop Layout (Absolute Positioning) */}
+            {/* Desktop Layout */}
             <motion.div variants={staggerContainer} className="hidden md:block w-full h-full relative min-h-[600px] lg:min-h-[750px]">
                 
                 {/* Main Image */}
@@ -70,5 +90,6 @@ export default function Hero() {
             </motion.div>
             
         </motion.section>
-    )
+    );
 }
+

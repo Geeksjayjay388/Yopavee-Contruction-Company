@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, CheckCircle2 } from 'lucide-react';
 import { useContact } from '../context/ContactContext';
-import contactHouse from '../assets/contact_house.png';
+import popupImg from '../assets/popup.jpg';
 
 export default function ContactModal() {
   const { isContactOpen, closeContact } = useContact();
@@ -91,8 +91,8 @@ export default function ContactModal() {
             {/* Left Column: Premium Construction Image */}
             <div className="hidden md:flex md:w-1/2 relative overflow-hidden flex-col justify-end p-8 text-white">
               <img
-                src={contactHouse}
-                alt="Modern luxury house under construction"
+                src={popupImg}
+                alt="Paving project estimate"
                 className="absolute inset-0 w-full h-full object-cover mix-blend-multiply"
               />
               {/* Gradient overlay for readability */}
@@ -100,15 +100,12 @@ export default function ContactModal() {
               
               {/* Text content inside the image */}
               <div className="relative z-10 space-y-3">
-                <span className="text-[#FF4D11] text-xs font-semibold uppercase tracking-wider bg-[#FF4D11]/10 px-3 py-1 rounded-full border border-[#FF4D11]/30 w-fit block">
-                  Yopavve Construction
-                </span>
-                <h3 className="text-3xl font-bold font-['Anta'] tracking-wide leading-tight">
-                  Let's Build Your Dream Project Together
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  Submit your details and our team of sales professionals will reach out to schedule a consultation within 24 hours.
-                </p>
+                <h1 className="text-3xl font-bold font-['Anta'] tracking-wide leading-tight">
+                  Get Your Free Paving Estimate
+                </h1>
+                <h2 className="text-gray-300 text-sm leading-relaxed">
+                  Tell us about your project and we'll get back to you within 24 hours with a clear quote.
+                </h2>
               </div>
             </div>
 
@@ -124,12 +121,9 @@ export default function ContactModal() {
                     transition={{ duration: 0.3 }}
                     className="w-full"
                   >
-                    <h2 className="text-2xl sm:text-3xl font-semibold text-black tracking-tight mb-2">
+                    <h2 className="text-2xl sm:text-3xl font-semibold text-black tracking-tight mb-6">
                       Contact Sales
                     </h2>
-                    <p className="text-gray-500 text-sm mb-6">
-                      Tell us about your project requirements and let's get started.
-                    </p>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
                       {/* Name Input */}
@@ -261,7 +255,7 @@ export default function ContactModal() {
                     </motion.div>
                     <h3 className="text-2xl font-semibold text-black mb-2">Request Received!</h3>
                     <p className="text-gray-500 text-sm max-w-sm mx-auto mb-8 leading-relaxed">
-                      Thank you for contacting Yopavve sales. One of our project managers will reach out to you shortly to discuss your details.
+                      Thank you for contacting sales. One of our project managers will reach out to you shortly to discuss your details.
                     </p>
                     <button
                       onClick={handleClose}
@@ -279,3 +273,4 @@ export default function ContactModal() {
     </AnimatePresence>
   );
 }
+
