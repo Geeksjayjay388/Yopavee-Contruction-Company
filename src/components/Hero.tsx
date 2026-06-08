@@ -8,19 +8,19 @@ export default function Hero() {
         <motion.section
             {...sectionMotionProps}
             id="home"
-            className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-12 lg:pt-0 lg:pb-20 min-h-[calc(100vh-80px)] flex flex-col md:block items-center justify-center font-sans scroll-mt-24"
+            className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-1 pb-12 lg:pt-0 lg:pb-20 min-h-[calc(100vh-80px)] flex flex-col md:block items-center justify-center font-sans scroll-mt-24"
         >
             
             {/* Mobile Layout */}
             <motion.div 
                 variants={staggerContainer} 
-                className="md:hidden flex flex-col w-full relative pt-6 pb-6"
+                className="md:hidden flex flex-col w-full relative pt-4 pb-4 overflow-visible"
             >
-                {/* 1. Title Heading Layer aligned right */}
-                <div className="w-full flex justify-end z-10 relative pr-2">
+                {/* 1. Title Heading Layer - Confined to the right side */}
+                <div className="w-full flex justify-end z-10 relative pr-2 mb-18">
                     <motion.h1 
                         variants={fadeUpItem} 
-                        className="text-[22px] sm:text-[26px] font-['Anta'] font-normal leading-[1.15] text-black text-left w-[58%]"
+                        className="text-[24px] sm:text-[26px] font-['Anta'] font-normal leading-[1.15] text-black text-left w-[65%]"
                     >
                         We will install paving<br/>
                         stones that will last<br/>
@@ -28,29 +28,33 @@ export default function Hero() {
                     </motion.h1>
                 </div>
                 
-                {/* 2. Image Layer - Pulled upwards to sit under text */}
+                {/* 2. Image Wrapper - Scales the width block naturally to handle correct vertical flow */}
                 <motion.div 
                     variants={fadeUpItem} 
-                    className="w-[116%] -ml-[8%] relative z-0 -mt-12 pointer-events-none"
+                    className="w-[180%] -ml-[40%] relative z-0 pointer-events-none"
                 >
-                    <img src={hero} alt="Paving Stones" className="w-full h-128 object-contain" />
+                    <img 
+                        src={hero} 
+                        alt="Paving Stones" 
+                        className="w-full h-auto object-contain" 
+                    />
                 </motion.div>
 
-                {/* 3. Bottom Layer - Keeps normal flow so content underneath doesn't overlap */}
-                <div className="w-full z-10 flex justify-between items-end px-2 -mt-10 sm:-mt-14 relative">
+                {/* 3. Bottom Description & Button - Placed underneath layout flow with light pull up adjustment */}
+                <div className="w-full z-10 flex justify-between items-end px-2 -mt-4 sm:-mt-8 relative">
                     
-                    {/* Paragraph on the bottom left */}
+                    {/* Paragraph on the bottom left (sits perfectly below the red brick gap) */}
                     <motion.div 
                         variants={fadeUpItem} 
-                        className="w-[65%] text-[#1D1D1D] text-[13px] sm:text-sm text-left leading-tight font-normal opacity-90"
+                        className="w-[62%] text-[#1D1D1D] text-[13px] sm:text-sm text-left leading-tight font-normal opacity-85"
                     >
                         <p>We have been laying high-quality paving stones for yards, driveways and entrance areas for 8 years.</p>
                     </motion.div>
                     
-                    {/* Round action button on the bottom right */}
+                    {/* Round action button on the bottom right (overlaps the bottom right grey brick) */}
                     <motion.button 
                         variants={fadeUpItem} 
-                        className="bg-[#1D1D1D] hover:bg-black text-white w-12 h-12 rounded-full flex items-center justify-center shadow-2xl cursor-pointer transition-colors mr-2 mb-1"
+                        className="bg-[#1D1D1D] hover:bg-black text-white w-12 h-12 rounded-full flex items-center justify-center shadow-2xl cursor-pointer transition-colors mr-2 transform translate-y-3"
                         aria-label="Scroll down"
                     >
                         <ArrowDown className="w-5 h-5" strokeWidth={2} />
@@ -92,4 +96,3 @@ export default function Hero() {
         </motion.section>
     );
 }
-
