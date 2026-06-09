@@ -220,13 +220,19 @@ function Stats() {
                 </div>
 
                 {/* Controls */}
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-                    <span className="px-10 py-2.5  rounded-md text-gray-800 font-medium bg-white  w-full sm:w-auto text-lg ">
-                        Before
-                    </span>
-                    
-                    <div className="flex items-center gap-4 sm:gap-6">
-                        <button className="w-12 h-12  flex items-center justify-center bg-white ">
+                <div className="flex flex-col gap-6">
+                    <div className="flex flex-row items-center justify-center gap-6 sm:justify-between">
+                        <span className="px-10 py-2.5 rounded-md text-gray-800 font-medium bg-white text-lg">
+                            Before
+                        </span>
+
+                        <span className="px-10 py-2.5 rounded-md text-gray-800 font-medium bg-white text-lg">
+                            After
+                        </span>
+                    </div>
+
+                    <div className="flex items-center justify-center gap-4 sm:gap-6">
+                        <button className="w-12 h-12 flex items-center justify-center bg-white">
                             <ArrowLeft className="w-5 h-5 text-gray-600" />
                         </button>
                         <div className="flex items-center gap-2">
@@ -234,14 +240,10 @@ function Stats() {
                             <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
                             <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
                         </div>
-                        <button className="w-12 h-12 rounded-full  flex items-center justify-center bg-white">
+                        <button className="w-12 h-12 rounded-full flex items-center justify-center bg-white">
                             <ArrowRight className="w-5 h-5 text-gray-600" />
                         </button>
                     </div>
-
-                    <span className="px-10 py-2.5  rounded-md text-gray-800 font-medium bg-white w-full sm:w-auto text-lg ">
-                        After
-                    </span>
                 </div>
             </motion.div>
 

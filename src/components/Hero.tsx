@@ -20,7 +20,7 @@ export default function Hero() {
                 <div className="w-full flex justify-end z-10 relative pr-2 mb-18">
                     <motion.h1 
                         variants={fadeUpItem} 
-                        className="text-[24px] sm:text-[26px] font-['Anta'] font-normal leading-[1.15] text-black text-left w-[65%]"
+                        className="text-[35px] sm:text-[26px] font-['Anta'] font-normal leading-[1.15] text-black text-left w-[75%]"
                     >
                         We will install paving<br/>
                         stones that will last<br/>
@@ -46,7 +46,7 @@ export default function Hero() {
                     {/* Paragraph on the bottom left (sits perfectly below the red brick gap) */}
                     <motion.div 
                         variants={fadeUpItem} 
-                        className="w-[62%] text-[#1D1D1D] text-[13px] sm:text-sm text-left leading-tight font-normal opacity-85"
+                        className="w-[65%] text-[#1D1D1D] text-[25px] sm:text-sm text-left leading-tight font-normal opacity-85"
                     >
                         <p>We have been laying high-quality paving stones for yards, driveways and entrance areas for 8 years.</p>
                     </motion.div>
