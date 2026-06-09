@@ -17,7 +17,7 @@ export default function Hero() {
                 className="md:hidden flex flex-col w-full relative pt-4 pb-4 overflow-visible"
             >
                 {/* 1. Title Heading Layer - Confined to the right side */}
-                <div className="w-full flex justify-end z-10 relative pr-2 mb-18">
+                <div className="w-full flex justify-end z-10 relative pr-2 mb-7">
                     <motion.h1 
                         variants={fadeUpItem} 
                         className="text-[35px] sm:text-[26px] font-['Anta'] font-normal leading-[1.15] text-black text-left w-[75%]"
@@ -31,7 +31,7 @@ export default function Hero() {
                 {/* 2. Image Wrapper - Scales the width block naturally to handle correct vertical flow */}
                 <motion.div 
                     variants={fadeUpItem} 
-                    className="w-[180%] -ml-[40%] relative z-0 pointer-events-none"
+                    className="w-[110%] -ml-[5%] sm:w-[120%] sm:-ml-[10%] relative z-0 pointer-events-none"
                 >
                     <img 
                         src={hero} 
