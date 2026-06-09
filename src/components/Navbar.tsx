@@ -51,7 +51,7 @@ function Navbar() {
                         className="bg-[#FF4D11] text-white px-6 py-2.5 rounded-md flex items-center gap-2 font-medium hover:bg-[#E6450F] transition-colors"
                     >
                         <Phone className="w-4 h-4" />
-                        Contact Sales
+                        Contact Us
                     </button>
                 </div>
 

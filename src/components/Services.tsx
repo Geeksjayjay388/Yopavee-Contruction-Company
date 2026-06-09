@@ -1,3 +1,4 @@
+import { useContact } from '../context/ContactContext';
 import { Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 import card1 from '../assets/card1.png';
@@ -18,6 +19,7 @@ const servicesData = [
 ];
 
 function Services() {
+  const { openContact } = useContact();
   return (
     <motion.section
       {...sectionMotionProps}
@@ -86,10 +88,15 @@ function Services() {
         </div>
 
         {/* Call Button */}
-        <button className="bg-[#FF4D11] text-white px-8 sm:px-10 py-4 rounded-full flex items-center justify-center gap-3 font-medium text-base sm:text-lg hover:bg-[#e6450f] transition-colors shrink-0 shadow-lg">
+        <button
+          type="button"
+          onClick={openContact}
+          className="bg-[#FF4D11] text-white px-8 sm:px-10 py-4 rounded-full flex items-center justify-center gap-3 font-medium text-base sm:text-lg hover:bg-[#e6450f] transition-colors shrink-0 shadow-lg"
+        >
           <Phone className="w-5 h-5" />
-          Book a Call
+          Contact Us
         </button>
+        
       </motion.div>
     </motion.section>
   );

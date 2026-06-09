@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useContact } from '../context/ContactContext';
 import faqImg from '../assets/faq.png';
 import { sectionMotionProps } from '../lib/motion';
 
@@ -29,6 +30,7 @@ const faqs = [
 
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(2);
+  const { openContact } = useContact();
 
   return (
     <motion.section
@@ -95,11 +97,16 @@ export default function Faq() {
               Contact us to start working on your project. We will respond within 24 hours
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-              <button className="w-full sm:w-auto bg-[#FF4D11] text-white px-8 py-3 rounded-md flex items-center justify-center gap-2 font-medium hover:bg-[#e6450f] transition-colors cursor-pointer text-[15px]">
+             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+              <button
+                type="button"
+                onClick={openContact}
+                className="w-full sm:w-auto bg-[#FF4D11] text-white px-8 py-3 rounded-md flex items-center justify-center gap-2 font-medium hover:bg-[#e6450f] transition-colors text-[15px]"
+              >
                 <Phone className="w-5 h-5" />
                 Book a Call
               </button>
+              
               <button className="w-full sm:w-auto bg-transparent border border-white/40 text-white px-10 py-3 rounded-md font-medium hover:bg-white/10 transition-colors cursor-pointer text-[15px]">
                 Contact Us
               </button>
