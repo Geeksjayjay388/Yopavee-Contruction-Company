@@ -90,28 +90,28 @@ function Stats() {
     return (
         <motion.section {...sectionMotionProps} id="about-us" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 scroll-mt-24">
             <motion.div variants={staggerContainer} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                
+
                 {/* Left Side: Images */}
                 <motion.div variants={fadeUpItem} className="w-full lg:col-span-5 lg:pr-6">
                     <img src={stats} alt="Team at work" className="w-[85%] mx-auto lg:w-full h-auto object-contain rounded-lg" />
                 </motion.div>
-                
+
                 {/* Right Side: Quote and Author */}
                 <motion.div variants={fadeUpItem} className="flex flex-col gap-8 lg:col-span-7">
                     <h2 className="text-2xl sm:text-3xl lg:text-[2.75rem] leading-none font-medium text-[#1A1A1A] tracking-tight">
                         I built my team around one rule - don't leave until the client is happy. Every person on my crew takes your project personally, not just professionally.
                     </h2>
-                    
+
                     <div className="flex items-center gap-4">
                         {/* Avatar */}
                         <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-200 shadow-sm shrink-0">
-                            <img 
-                                src="https://i.pravatar.cc/150?u=robert_williams" 
-                                alt="Robert Williams" 
+                            <img
+                                src="https://i.pravatar.cc/150?u=robert_williams"
+                                alt="Robert Williams"
                                 className="w-full h-full object-cover"
                             />
                         </div>
-                        
+
                         {/* Name and Title */}
                         <div className="flex items-center gap-2 flex-wrap">
                             <span className="font-semibold text-lg text-black">Robert Williams</span>
@@ -184,23 +184,23 @@ function Stats() {
                 <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-md overflow-hidden shadow-lg select-none">
                     {/* Before Image (Background) */}
                     <img src={beforeImg} alt="Before" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
-                    
+
                     {/* After Image (Foreground, clipped) */}
-                    <img 
-                        src={afterImg} 
-                        alt="After" 
-                        className="absolute inset-0 w-full h-full object-cover pointer-events-none" 
+                    <img
+                        src={afterImg}
+                        alt="After"
+                        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
                     />
-                    
+
                     {/* Separator Line */}
-                    <div 
+                    <div
                         className="absolute top-0 bottom-0 w-1 bg-white pointer-events-none z-10"
                         style={{ left: `calc(${sliderPosition}% - 2px)` }}
                     ></div>
 
                     {/* Center Drag Handle */}
-                    <div 
+                    <div
                         className="absolute top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center z-10 pointer-events-none border border-gray-100"
                         style={{ left: `calc(${sliderPosition}% - 24px)` }}
                     >
@@ -209,11 +209,11 @@ function Stats() {
                     </div>
 
                     {/* Invisible Range Input for Dragging */}
-                    <input 
-                        type="range" 
-                        min="0" 
-                        max="100" 
-                        value={sliderPosition} 
+                    <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value={sliderPosition}
                         onChange={(e) => setSliderPosition(Number(e.target.value))}
                         className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20"
                     />
@@ -222,11 +222,11 @@ function Stats() {
                 {/* Controls */}
                 <div className="flex flex-col gap-6">
                     <div className="flex flex-row items-center justify-center gap-6 sm:justify-between">
-                        <span className="px-10 py-2.5 rounded-md text-gray-800 font-medium bg-white text-lg">
+                        <span className="px-8 py-2 rounded-full border border-gray-200 text-gray-400 font-bold text-xs uppercase tracking-widest bg-white shadow-sm">
                             Before
                         </span>
 
-                        <span className="px-10 py-2.5 rounded-md text-gray-800 font-medium bg-white text-lg">
+                        <span className="px-8 py-2 rounded-full border border-[#FF4D11] text-[#FF4D11] font-bold text-xs uppercase tracking-widest bg-[#FF4D11]/5 shadow-sm shadow-[#FF4D11]/10">
                             After
                         </span>
                     </div>

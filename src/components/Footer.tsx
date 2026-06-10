@@ -126,7 +126,7 @@ function Footer() {
             }}
             className="w-full sm:w-auto bg-[#FF4D11] text-white px-6 py-2.5 rounded-md flex items-center justify-center gap-2 font-medium hover:bg-[#E6450F] transition-colors shadow-lg shadow-[#FF4D11]/25 hover:shadow-[#FF4D11]/35 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
           >
-            Contact Sales
+            Contact Us
           </button>
         </div>
 

@@ -1,6 +1,6 @@
 import { ArrowDown } from 'lucide-react';
 import { motion } from 'framer-motion';
-import hero from "../assets/hero.webp";
+import hero from "../assets/hero.png";
 import { fadeUpItem, sectionMotionProps, staggerContainer } from '../lib/motion';
 
 export default function Hero() {
@@ -20,7 +20,7 @@ export default function Hero() {
                 <div className="w-full flex justify-end z-10 relative pr-2 mb-7">
                     <motion.h1 
                         variants={fadeUpItem} 
-                        className="text-[35px] sm:text-[26px] font-['Anta'] font-normal leading-[1.15] text-black text-left w-[75%]"
+                        className="text-[30px] sm:text-[26px] font-['Anta'] font-normal leading-[1.15] text-black text-left w-[100%]"
                     >
                         We will install paving<br/>
                         stones that will last<br/>
@@ -46,7 +46,7 @@ export default function Hero() {
                     {/* Paragraph on the bottom left (sits perfectly below the red brick gap) */}
                     <motion.div 
                         variants={fadeUpItem} 
-                        className="w-[65%] text-[#1D1D1D] text-[25px] sm:text-sm text-left leading-tight font-normal opacity-85"
+                        className="w-[65%] text-[#1D1D1D] text-[20px] sm:text-sm text-left leading-tight font-normal opacity-85"
                     >
                         <p>We have been laying high-quality paving stones for yards, driveways and entrance areas for 8 years.</p>
                     </motion.div>
