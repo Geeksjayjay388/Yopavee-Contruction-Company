@@ -1,6 +1,7 @@
 import { ArrowDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 import hero from "../assets/hero.png";
+import heroDesktop from "../assets/hero-desktop.png";
 import { fadeUpItem, sectionMotionProps, staggerContainer } from '../lib/motion';
 
 export default function Hero() {
@@ -67,7 +68,7 @@ export default function Hero() {
 
                 {/* Main Image */}
                 <motion.div variants={fadeUpItem} className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <img src={hero} alt="Paving Stones" className="w-[95%] max-w-7xl object-contain -mt-10" />
+                    <img src={heroDesktop} alt="Paving Stones" className="w-[95%] max-w-7xl object-contain -mt-10" />
                 </motion.div>
 
                 {/* Top Right Text */}

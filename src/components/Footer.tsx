@@ -48,11 +48,11 @@ function Footer() {
           </div>
         </div>
 
-        {/* Main Content */}
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 py-12 lg:py-16">
-          
+{/* Main Content — 2 columns on mobile, 4 columns on large screens */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 py-12 lg:py-16 relative">
+          <div className="absolute top-0 bottom-0 left-1/2 w-px bg-white/30 -translate-x-1/2 sm:hidden"></div>
           {/* Contact / Left Column */}
-          <div className="lg:w-[22%] flex flex-col">
+          <div className="flex flex-col col-span-2 lg:col-span-1">
             <div className="flex-1 flex flex-col justify-between">
               <div>
                 <p className="text-gray-300 text-[15px] leading-relaxed max-w-[260px] mb-8">
@@ -69,7 +69,7 @@ function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:w-[26%] flex flex-col items-start">
+          <div className="flex flex-col items-start">
             <ul className="flex flex-col gap-3.5 text-gray-400 text-[15px]">
               <li className="hover:text-white cursor-pointer transition-colors">Home</li>
               <li className="hover:text-white cursor-pointer transition-colors">About Us</li>
@@ -91,7 +91,7 @@ function Footer() {
           </div>
 
           {/* Services */}
-          <div className="lg:w-[26%] flex flex-col items-start">
+          <div className="flex flex-col items-start">
             <ul className="flex flex-col gap-3.5 text-gray-400 text-[15px]">
               <li className="hover:text-white cursor-pointer transition-colors">Driveway Installation</li>
               <li className="hover:text-white cursor-pointer transition-colors">Patio Installation</li>
@@ -103,7 +103,7 @@ function Footer() {
           </div>
 
           {/* Legal */}
-          <div className="lg:w-[26%] flex flex-col items-start">
+          <div className="flex flex-col items-start">
             <ul className="flex flex-col gap-3.5 text-gray-400 text-[15px]">
               <li className="hover:text-white cursor-pointer transition-colors">Privacy Policy</li>
               <li className="hover:text-white cursor-pointer transition-colors">Terms & Conditions</li>
