@@ -49,12 +49,12 @@ function Footer() {
         </div>
 
 {/* Main Content — 2 columns on mobile, 4 columns on large screens */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 py-12 lg:py-16 relative">
-          <div className="absolute top-0 bottom-0 left-1/2 w-px bg-white/30 -translate-x-1/2 sm:hidden"></div>
-          {/* Contact / Left Column */}
-          <div className="flex flex-col col-span-2 lg:col-span-1">
-            <div className="flex-1 flex flex-col justify-between">
-              <div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 py-12 lg:py-16">
+           
+           {/* Contact / Left Column */}
+           <div className="flex flex-col col-span-2 lg:col-span-1">
+             <div className="flex-1 flex flex-col justify-between">
+               <div>
                 <p className="text-gray-300 text-[15px] leading-relaxed max-w-[260px] mb-8">
                   4521 Maple Industrial Blvd,<br/>Tampa, FL 33619
                 </p>
