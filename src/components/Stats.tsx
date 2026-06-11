@@ -221,12 +221,12 @@ function Stats() {
 
                 {/* Controls */}
                 <div className="flex flex-col gap-6">
-                    <div className="flex flex-row items-center justify-center gap-20 sm:justify-between">
+                    <div className="flex flex-row items-center justify-center gap-12 sm:justify-between">
                         <span className="px-8 py-2 rounded-full border border-gray-200 text-gray-400 font-bold text-xs uppercase tracking-widest bg-white shadow-sm">
                             Before
                         </span>
 
-                        <div className="w-px h-6 bg-gray-300"></div>
+                        <div className="w-0.5 h-6 bg-gray-300"></div>
 
                         <span className="px-8 py-2 rounded-full border border-[#FF4D11] text-[#FF4D11] font-bold text-xs uppercase tracking-widest bg-[#FF4D11]/5 shadow-sm shadow-[#FF4D11]/10">
                             After
