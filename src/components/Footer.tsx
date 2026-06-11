@@ -48,70 +48,66 @@ function Footer() {
           </div>
         </div>
 
-{/* Main Content — 2 columns on mobile, 4 columns on large screens */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 py-12 lg:py-16">
+{/* Main Content — stacked blocks on mobile, 4 columns on large screens */}
+        <div className="flex flex-col lg:grid lg:grid-cols-4 gap-y-10 py-12 lg:py-16">
            
            {/* Contact / Left Column */}
-           <div className="flex flex-col col-span-2 lg:col-span-1">
-             <div className="flex-1 flex flex-col justify-between">
-               <div>
-                <p className="text-gray-300 text-[15px] leading-relaxed max-w-[260px] mb-8">
-                  4521 Maple Industrial Blvd,<br/>Tampa, FL 33619
-                </p>
-                <div className="text-gray-500 text-[13px] flex flex-col gap-2 font-medium">
-                  <p>Mon — Fri: 7:00 AM — 6:00 PM</p>
-                  <p>Saturday: 8:00 AM — 2:00 PM</p>
-                  <p>Sunday: Closed</p>
-                </div>
-              </div>
-              <p className="text-gray-500 text-xs mt-10">© 2026 Aonix Studio — All Rights Reserved</p>
-            </div>
-          </div>
+           <div className="block lg:col-span-1 mb-8 lg:mb-0">
+             <p className="text-gray-300 text-[15px] leading-relaxed mb-4">
+               4521 Maple Industrial Blvd,<br/>Tampa, FL 33619
+             </p>
+             <div className="text-gray-500 text-[13px] block font-medium mb-4">
+               <p className="mb-1">Mon — Fri: 7:00 AM — 6:00 PM</p>
+               <p className="mb-1">Saturday: 8:00 AM — 2:00 PM</p>
+               <p>Sunday: Closed</p>
+             </div>
+             <p className="text-gray-500 text-xs">© 2026 Aonix Studio — All Rights Reserved</p>
+           </div>
 
-          {/* Quick Links */}
-          <div className="flex flex-col items-start">
-            <ul className="flex flex-col gap-3.5 text-gray-400 text-[15px]">
-              <li className="hover:text-white cursor-pointer transition-colors">Home</li>
-              <li className="hover:text-white cursor-pointer transition-colors">About Us</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Services</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Reviews</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Work Process</li>
-              <li className="hover:text-white cursor-pointer transition-colors">FAQ</li>
-              <li 
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  openContact();
-                }} 
-                className="text-[#FF4D11] hover:text-white font-medium cursor-pointer transition-colors"
-              >
-                Contact Sales
-              </li>
-            </ul>
-          </div>
+           {/* Quick Links */}
+           <div className="block lg:col-span-1 mb-8 lg:mb-0">
+             <ul className="block text-gray-400 text-[15px]">
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">Home</li>
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">About Us</li>
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">Services</li>
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">Reviews</li>
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">Work Process</li>
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">FAQ</li>
+               <li 
+                 onClick={(e) => {
+                   e.preventDefault();
+                   e.stopPropagation();
+                   openContact();
+                 }} 
+                 className="text-[#FF4D11] hover:text-white font-medium cursor-pointer transition-colors"
+               >
+                 Contact Sales
+               </li>
+             </ul>
+           </div>
 
-          {/* Services */}
-          <div className="flex flex-col items-start">
-            <ul className="flex flex-col gap-3.5 text-gray-400 text-[15px]">
-              <li className="hover:text-white cursor-pointer transition-colors">Driveway Installation</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Patio Installation</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Walkways & Pathways</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Front Entrance & Steps</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Backyard Paving</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Pool Deck Paving</li>
-            </ul>
-          </div>
+           {/* Services */}
+           <div className="block lg:col-span-1 mb-8 lg:mb-0">
+             <ul className="block text-gray-400 text-[15px]">
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">Driveway Installation</li>
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">Patio Installation</li>
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">Walkways & Pathways</li>
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">Front Entrance & Steps</li>
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">Backyard Paving</li>
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">Pool Deck Paving</li>
+             </ul>
+           </div>
 
-          {/* Legal */}
-          <div className="flex flex-col items-start">
-            <ul className="flex flex-col gap-3.5 text-gray-400 text-[15px]">
-              <li className="hover:text-white cursor-pointer transition-colors">Privacy Policy</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Terms & Conditions</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Cookies Privacy</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Copyright</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Disclaimer</li>
-            </ul>
-          </div>
+           {/* Legal */}
+           <div className="block lg:col-span-1">
+             <ul className="block text-gray-400 text-[15px]">
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">Privacy Policy</li>
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">Terms & Conditions</li>
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">Cookies Privacy</li>
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">Copyright</li>
+               <li className="hover:text-white cursor-pointer transition-colors mb-2">Disclaimer</li>
+             </ul>
+           </div>
         </div>
 
         {/* Email & CTA Row */}
