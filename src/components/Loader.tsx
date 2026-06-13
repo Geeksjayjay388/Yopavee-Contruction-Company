@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import logo from '../assets/loadinglogo.png'; 
 
-function Loader() {
+function Loader({ progress }: { progress: number }) {
   return (
     <motion.div
       // Changed to a dull, raw concrete/slate tone (bg-[#1C1F22])
@@ -81,15 +81,14 @@ function Loader() {
         {/* Progress Bar (High-contrast Construction Orange on Dark Grey Track) */}
         <div className="w-48 h-1.5 bg-white/5 rounded-none overflow-hidden relative border border-white/5">
           <motion.div
-            className="h-full bg-[#FF4D11] w-1/2"
-            initial={{ left: '-50%' }}
-            animate={{ left: '100%' }}
+            className="h-full bg-[#FF4D11]"
+            initial={{ width: '0%' }}
+            animate={{ width: `${progress}%` }}
             transition={{ 
-              duration: 1.5, 
-              ease: [0.6, 0.05, 0.1, 0.9], // Punchy, jerky mechanical easing
-              repeat: Infinity 
+              type: 'spring',
+              stiffness: 80,
+              damping: 15
             }}
-            style={{ position: 'absolute' }}
           />
         </div>
 
@@ -100,7 +99,7 @@ function Loader() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          Building Experience
+          Building Experience {progress}%
         </motion.p>
       </div>
     </motion.div>

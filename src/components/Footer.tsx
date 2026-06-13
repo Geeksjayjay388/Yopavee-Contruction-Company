@@ -1,5 +1,4 @@
 import { ArrowUpRight } from 'lucide-react';
-import footerLogo from '../assets/footerlogo.png';
 import { useContact } from '../context/ContactContext';
 
 function Footer() {
@@ -90,7 +89,7 @@ function Footer() {
 
         {/* Email & CTA Row */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 border-t border-gray-800">
-          <span className="text-lg sm:text-xl lg:text-[1.75rem] font-medium tracking-wide">Exampleemail@gmail.com</span>
+          <span className="text-lg sm:text-xl lg:text-[1.75rem] font-medium tracking-wide">yopavvecontruction@gmail.com</span>
         
         </div>
 
